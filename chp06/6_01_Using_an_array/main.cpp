@@ -5,7 +5,9 @@ using namespace std;
 
 int main()
 {
-  int height[10];   // Array of heights
+  // int height[10];   // Array of heights
+  const int max_heights = 10;
+  int height[max_heights];
   int count = 0;    // Number of heights
   char reply = 0;   // Reply to prompt
 
@@ -18,10 +20,12 @@ int main()
     // Check if another input is required
     cout << "Do you want to enter another (y or n)?";
     cin >> reply;
-  } while(count<10 && tolower(reply) == 'y');
+  } while(count<max_heights && tolower(reply) == 'y');
+  // } while(count<10 && tolower(reply) == 'y');
 
   // Indicate when array is full
-  if(count == 10)
+  // if(count == 10)
+  if(count == max_heights)
     cout << endl << "Maximum height count reached." << endl;
 
   // Calculate the average and display it
